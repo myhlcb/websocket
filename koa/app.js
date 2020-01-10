@@ -4,6 +4,7 @@ const http = require ('http').createServer (app.callback ());
 const io = require ('socket.io') (http);
 io.on ('connection', socket => {
   console.log ('koa connect');
+  socket.emit ('respounse', {success: true});
 });
 const Router = require ('koa-router');
 const router = new Router ();
